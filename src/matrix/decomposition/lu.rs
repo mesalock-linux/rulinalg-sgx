@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use matrix::{Matrix, BaseMatrix, BaseMatrixMut};
 use matrix::{back_substitution};
 use matrix::PermutationMatrix;
@@ -272,7 +273,7 @@ impl<T> PartialPivLu<T> where T: Any + Float {
         for i in 0 .. n {
             e[i] = T::one();
 
-            let col = try!(self.solve(e));
+            let col = self.solve(e)?;
 
             for j in 0 .. n {
                 inv[[j, i]] = col[j];
@@ -494,7 +495,7 @@ impl<T> FullPivLu<T> where T: Any + Float {
         for i in 0 .. n {
             e[i] = T::one();
 
-            let col = try!(self.solve(e));
+            let col = self.solve(e)?;
 
             for j in 0 .. n {
                 inv[[j, i]] = col[j];

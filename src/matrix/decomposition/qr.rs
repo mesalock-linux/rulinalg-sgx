@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use matrix::{Matrix, MatrixSlice, BaseMatrix, BaseMatrixMut};
 use vector::Vector;
 use error::{Error, ErrorKind};

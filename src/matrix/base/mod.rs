@@ -19,6 +19,7 @@
 //! let _new_mat = &mat_slice.transpose() * &a;
 //! ```
 
+use std::prelude::v1::*;
 use matrix::{Matrix, MatrixSlice, MatrixSliceMut};
 use matrix::{Cols, ColsMut, Row, RowMut, Column, ColumnMut, Rows, RowsMut, Axes};
 use matrix::{DiagOffset, Diagonal, DiagonalMut};
@@ -1636,7 +1637,7 @@ pub trait BaseMatrixMut<T>: BaseMatrix<T> {
     /// assert_eq!(b, matrix![2.0, 2.0; 2.0, 2.0]);
     /// # }
     /// ```
-    fn apply(mut self, f: &Fn(T) -> T) -> Self
+    fn apply(mut self, f: &dyn Fn(T) -> T) -> Self
         where T: Copy
     {
         for val in self.iter_mut() {

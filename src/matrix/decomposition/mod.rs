@@ -124,6 +124,7 @@
 // 3. [Computation of the SVD]
 // (http://www.cs.utexas.edu/users/inderjit/public_papers/HLA_SVD.pdf)
 
+use std::prelude::v1::*;
 mod qr;
 mod cholesky;
 mod bidiagonal;
