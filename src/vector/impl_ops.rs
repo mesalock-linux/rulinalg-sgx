@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use std::ops::{Mul, Add, Div, Sub, Rem,
                MulAssign, AddAssign, DivAssign, SubAssign, RemAssign,
                Neg, Not,

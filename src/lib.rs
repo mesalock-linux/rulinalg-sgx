@@ -86,8 +86,19 @@
 #![deny(missing_docs)]
 #![warn(missing_debug_implementations)]
 
+#![cfg_attr(all(feature = "mesalock_sgx",
+                not(target_env = "sgx")), no_std)]
+#![cfg_attr(all(target_env = "sgx", target_vendor = "mesalock"), feature(rustc_private))]
+
+#[cfg(all(feature = "mesalock_sgx", not(target_env = "sgx")))]
+#[macro_use]
+extern crate sgx_tstd as std;
+
 extern crate num as libnum;
 extern crate matrixmultiply;
+extern crate serde;
+#[macro_use]
+extern crate serde_derive;
 
 // macros should be at the top in order for macros to be accessible in subsequent modules
 #[macro_use]

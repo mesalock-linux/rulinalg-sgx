@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use super::{Matrix, MatrixSlice, MatrixSliceMut};
 use super::{Row, RowMut, Column, ColumnMut};
 use super::{BaseMatrix, BaseMatrixMut};

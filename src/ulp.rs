@@ -1,4 +1,5 @@
 //! Tools for ULP-based comparison of floating point numbers.
+use std::prelude::v1::*;
 use std::mem;
 
 /// Represents the result of an ULP-based comparison between two floating point numbers.

@@ -6,6 +6,7 @@
 //! Most of the logic for manipulating matrices is generically implemented
 //! via `BaseMatrix` and `BaseMatrixMut` trait.
 
+use std::prelude::v1::*;
 use std;
 use std::marker::PhantomData;
 use libnum::Float;
@@ -30,7 +31,7 @@ pub use self::base::{BaseMatrix, BaseMatrixMut};
 pub use self::permutation_matrix::{PermutationMatrix, Parity};
 
 /// Matrix dimensions
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Deserialize)]
 pub enum Axes {
     /// The row axis.
     Row,
@@ -41,7 +42,7 @@ pub enum Axes {
 /// The `Matrix` struct.
 ///
 /// Can be instantiated with any type.
-#[derive(Debug, Clone, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub struct Matrix<T> {
     rows: usize,
     cols: usize,

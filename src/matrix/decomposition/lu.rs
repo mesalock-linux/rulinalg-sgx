@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use matrix::{Matrix, BaseMatrix, BaseMatrixMut};
 use matrix::{back_substitution};
 use matrix::PermutationMatrix;

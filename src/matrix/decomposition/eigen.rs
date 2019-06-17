@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use matrix::{Matrix, MatrixSliceMut, BaseMatrix, BaseMatrixMut};
 use norm::Euclidean;
 use error::{Error, ErrorKind};

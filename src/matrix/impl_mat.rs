@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use std::any::Any;
 use std::fmt;
 use libnum::{One, Zero, Float, FromPrimitive};
